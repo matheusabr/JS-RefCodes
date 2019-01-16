@@ -104,3 +104,40 @@ const mainTeam = {
 };
 console.table(mainTeam);
 teamProfile(mainTeam);
+
+/**
+ * Filter and Map
+ */
+
+const numbers = [ -2, 0, -1, 3, 7, 12 ];
+console.log('numbers', numbers);
+
+// Filter an array
+console.log('Filter an array');
+const filtered = numbers.filter(x => x > 0);
+console.log('filtered', filtered);
+
+// Map and concatenate elements
+console.log('Map and concatenate elements');
+const listElements = filtered.map(n => `<li>${n}</li>`);
+console.log('listElements', listElements);
+
+// Join elements and set its parent
+console.log('Join elements and set its parent');
+const listUl = '<ul>' + listElements.join('') + '</ul>';
+console.log('listUl', listUl);
+
+// Map and return an array of objects
+console.log('Map and return an array of objects');
+const items = filtered.map((n) => ({ value: n }))
+console.table(items);
+
+// Chaining js methods to filter and map an array
+console.log('Chaining js methods to filter and map an array');
+const chainedListEl = numbers
+    .filter(x => x > 0)
+    .map(n => ({ value: n }))
+    .filter(obj => obj.value > 3)
+    .map(obj => obj.value);
+console.log('chainedListEl', chainedListEl);
+
