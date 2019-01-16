@@ -141,3 +141,21 @@ const chainedListEl = numbers
     .map(obj => obj.value);
 console.log('chainedListEl', chainedListEl);
 
+/**
+ * Reducer
+ */
+
+// Sum the elements of an array
+// -- Hard way
+console.log('Sum the elements of an array the Hard way');
+let sum = 0;
+for (let n of numbers)
+    sum += n;
+console.log(sum);
+
+// -- Smart way
+console.log('Reduce sums elements of an array in a Smart way');
+// Set 0 on second argument to start the accumulator on 0
+// or leave empty to start the accumulator on first position value of array
+const sumNumbers = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sumNumbers);
